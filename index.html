@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>PATCHGI RADIO</title>
+    <meta name="description" content="@patchgiと@3846masaの送る，FMS学科生のためのポータルラジオです．">
+    <meta property="og:title" content="PATCHGI RADIO"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content="@patchgiと@3846masaの送る，FMS学科生のためのポータルラジオです．"/>
+    <meta property="og:url" content="https://patchgi-radio.github.io/"/>
+    <meta property="og:image" content="https://patchgi-radio.github.io/images/logo.png"/>
+    
+    <script src="./scripts/fittext.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+    
+    <script>
+      window.addEventListener('load', function(){
+        window.fitText( document.querySelector("#logoContainer"), 0.6 );
+        document.querySelector("#logo").style.opacity = 1.0;
+      });
+    </script>
+    <style>
+      html, body, .full {
+        height: 100%;
+        margin: 0;
+        width : 100%;
+      }
+      #logoContainer {
+        background : #faea00;
+        font-family: 'Anton', sans-serif;
+        overflow   : hidden;
+        position   : relative;
+      }
+      #logo {
+        color      : #0d0301;
+        left       : 50%;
+        margin     : 0;
+        position   : absolute;
+        text-align : center;
+        top        : 50%;
+        transform  : translate(-50%, -50%);
+        width      : 100%;
+        
+        opacity    : 0;
+        transition-property: opacity;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-in;
+      }
+      a, a:hover, a:visited {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logoContainer" class="full">
+      <a href="http://twitcasting.tv/3846masa/" target="_blank">
+        <p id="logo">PATCHGI RADIO</p>
+      </a>
+    </div>
+  </body>
+</html>
