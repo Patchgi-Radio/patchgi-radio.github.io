@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="initial-scale=1")
+    title= title
+    meta(name="description", content=description)
+    meta(property="og:title", content=title)
+    meta(property="og:type", content=og.type)
+    meta(property="og:description", content=description)
+    meta(property="og:url", content=og.url)
+    meta(property="og:image", content=og.image)
+    
+    link(href="//fonts.googleapis.com/css?family=Anton", rel="stylesheet")
+    link(href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.0.26/css/bulma.min.css", rel="stylesheet")
+    
+    script(src="//cdnjs.cloudflare.com/ajax/libs/device.js/0.2.7/device.min.js")
+    script(src="//cdn.jsdelivr.net/jquery/2.2.3/jquery.min.js")
+    script(src="//cdn.jsdelivr.net/fittext/1.2/jquery.fittext.js")
+    script(src="//cdn.jsdelivr.net/vue/1.0.22/vue.min.js")
+    script(src="scripts/main.js")
+    style.
+      html, body, .hero, .footer {
+        background : #faea00;
+        color: #000;
+        font-family: 'Anton', sans-serif;
+      }
+  body.container.is-fluid
+    .hero.is-fullheight
+      .hero-body
+        .container.has-text-centered
+          h1.title PATCHGI RADIO
+          h2.subtitle START: Monday 23:00
+      .hero-foot.footer
+        .container.has-text-centered
+          .content
+            p.button.is-large.is-dark.is-inverted(v-if="!status.islive")
+              | OFF AIR
+            p.button.is-large.is-danger.is-inverted(v-if="status.islive")
+              | ON AIR
+          .content
+            a.button.is-large.is-success(
+              href="http://twitcasting.tv/kakaka_88",
+              target="_blank", 
+            )
+              | GO TO RADIO
+            a.button.is-large.is-primary(
+              href="https://docs.google.com/forms/d/1Aoss1nkHki6mNV9Mg0uU_f4flgJg7zurHeR_sMoDGGc/viewform",
+              target="_blank", style="color: #fff;"
+            )
+              | ASK PATCHGI
+          .content
+            progress(class="progress", v-bind:value="status.duration", max="1800")

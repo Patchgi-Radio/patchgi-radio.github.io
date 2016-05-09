@@ -1,0 +1,34 @@
+{
+  "name": "patchgi-radio.github.io",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm-run-all build:json build:pug",
+    "build:json": "yaml2json ./contents/data.yml > ./contents/data.json",
+    "build:pug": "pug index.pug --obj ./contents/data.json -o .",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:browser-sync": "browser-sync start --server --files [ ./index.html ] --port 8000 --host ubuntu.local",
+    "watch:pug": "sane \"npm run build\" --glob=\"{index.pug,contents/data.yml}\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Patchgi-Radio/patchgi-radio.github.io.git"
+  },
+  "keywords": [],
+  "author": "3846masa <3846masahiro+git@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Patchgi-Radio/patchgi-radio.github.io/issues"
+  },
+  "homepage": "https://github.com/Patchgi-Radio/patchgi-radio.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "npm-run-all": "^1.8.0",
+    "pug": "^2.0.0-alpha6",
+    "pug-cli": "^1.0.0-alpha1",
+    "sane": "^1.3.4",
+    "yamljs": "^0.2.7"
+  }
+}
